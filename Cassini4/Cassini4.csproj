@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B5CCBF3-D061-405A-AFC4-CBAB6A9C0895}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cassini</RootNamespace>
+    <AssemblyName>Cassini</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\ChangeSiteCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\DeleteSiteCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\HostSiteCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\StartServerCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\StartSiteCommand.cs" />
+    <Compile Include="Commands\StopServerCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\StopSiteCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CassiniConfig.cs" />
+    <Compile Include="Configuration\CassiniWebsitesConfig.cs" />
+    <Compile Include="Configuration\CassiniXmlSerializer.cs" />
+    <Compile Include="Configuration\CassiniConfigConstants.cs" />
+    <Compile Include="Configuration\CassiniWebsiteConfig.cs" />
+    <Compile Include="Configuration\XmlSerializableDictionary.cs" />
+    <Compile Include="Core\CassiniTaskResult.cs" />
+    <Compile Include="Core\CommandExecutor.cs" />
+    <Compile Include="Core\EventKeys.cs" />
+    <Compile Include="Exceptions\PortInUseException.cs" />
+    <Compile Include="Exceptions\WebsiteExistsAtTheSameUrl.cs" />
+    <Compile Include="Forms\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\FormValidationUtility.cs" />
+    <Compile Include="Utilities\Website.cs" />
+    <Compile Include="Core\App.cs" />
+    <Compile Include="Core\CommandBase.cs" />
+    <Compile Include="Core\CommandStatus.cs" />
+    <Compile Include="Core\EventBroker.cs" />
+    <Compile Include="Core\ICommand.cs" />
+    <Compile Include="Controls\A1Panel\A1Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\A1Panel\A1Panel.designer.cs">
+      <DependentUpon>A1Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\A1Panel\A1PanelGraphics.cs" />
+    <Compile Include="Controls\A1Panel\Globals.cs" />
+    <Compile Include="Controls\DigitalDisplay\DigitalDisplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DigitalDisplay\DigitalDisplayControl.designer.cs">
+      <DependentUpon>DigitalDisplayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OutlookPanel\OutlookPanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OutlookPanel\OutlookPanelEx.designer.cs">
+      <DependentUpon>OutlookPanelEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VistaControls\CommandLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VistaControls\CustomButton.cs" />
+    <Compile Include="Controls\VistaControls\EventArgs.cs" />
+    <Compile Include="Controls\VistaControls\LabeledDivider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VistaControls\Message.cs" />
+    <Compile Include="Controls\VistaControls\NativeMethods.cs" />
+    <Compile Include="Controls\VistaControls\NativeMethods2.cs" />
+    <Compile Include="Controls\VistaControls\Native\Bitmap.cs" />
+    <Compile Include="Controls\VistaControls\Native\GDI.cs" />
+    <Compile Include="Controls\VistaControls\Native\Messaging.cs" />
+    <Compile Include="Controls\VistaControls\Native\POINT.cs" />
+    <Compile Include="Controls\VistaControls\Native\RECT.cs" />
+    <Compile Include="Controls\VistaControls\Native\Windows.cs" />
+    <Compile Include="Controls\VistaControls\Native\WindowStyle.cs" />
+    <Compile Include="Controls\VistaControls\Pictures.Designer.cs" />
+    <Compile Include="Controls\VistaControls\Progressbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VistaControls\Results.cs" />
+    <Compile Include="Controls\VistaControls\TaskDialog.cs" />
+    <Compile Include="Controls\VistaControls\TaskDialogButton.cs" />
+    <Compile Include="Controls\VistaControls\TaskDialogIcon.cs" />
+    <Compile Include="Controls\VistaControls\TaskDialog_static.cs" />
+    <Compile Include="Controls\VistaControls\ExceptionMessages.Designer.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\BorderOption.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\GlowOption.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\IThemeTextOption.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\NativeMethods.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\OverlayOption.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\ShadowOption.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\ThemedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VistaControls\ThemeText\ThemedText.cs" />
+    <Compile Include="Controls\VistaControls\ThemeText\ThemedTextCreate.cs" />
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Forms\ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressForm.Designer.cs">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\ICassiniTask.cs" />
+    <Compile Include="Core\CassiniTask.cs" />
+    <Compile Include="Utilities\ByteParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\ByteString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\Connection.cs" />
+    <Compile Include="Utilities\Host.cs" />
+    <Compile Include="Utilities\Messages.cs" />
+    <Compile Include="Utilities\Request.cs" />
+    <Compile Include="Utilities\WebsiteHost.cs" />
+    <EmbeddedResource Include="Controls\DigitalDisplay\DigitalDisplayControl.resx">
+      <DependentUpon>DigitalDisplayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OutlookPanel\OutlookPanelEx.resx">
+      <DependentUpon>OutlookPanelEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VistaControls\ExceptionMessages.resx" />
+    <EmbeddedResource Include="Controls\VistaControls\Pictures.resx" />
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressForm.resx">
+      <DependentUpon>ProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Controls\VistaControls\ThemedLabel.pdn" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Cassini.ico" />
+    <Content Include="Controls\VistaControls\active_search.png" />
+    <Content Include="Controls\VistaControls\inactive_search.png" />
+    <Content Include="Controls\VistaControls\ThemedLabel.bmp" />
+    <Content Include="Controls\VistaControls\ThemedLabel.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
