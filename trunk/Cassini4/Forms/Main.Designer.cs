@@ -1,12 +1,16 @@
 ﻿/* **********************************************************************************
  *
- * Copyright (c) Tanzim Saqib. URL: http://www.TanzimSaqib.com. All rights reserved.
+ * Copyright (c) Tanzim Saqib. All rights reserved.
  *
  * This source code is subject to terms and conditions of the Microsoft Public
  * License (Ms-PL). A copy of the license can be found in the license.htm file
  * included in this distribution.
  *
  * You must not remove this notice, or any other, from this software.
+ *
+ * For continued development:   http://www.TanzimSaqib.com
+ * Source:                      http://cassini.googlecode.com/
+ * License information:         http://www.opensource.org/licenses/ms-pl.html
  *
  * **********************************************************************************/
 
@@ -71,6 +75,7 @@ namespace Cassini
             this.lblUptime = new System.Windows.Forms.Label();
             this.uptimeCounter = new Owf.Controls.DigitalDisplayControl();
             this.btnStartServer = new VistaControls.CommandLink();
+            this.label6 = new System.Windows.Forms.Label();
             this.contextMenuNotify.SuspendLayout();
             this.a1Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -123,6 +128,7 @@ namespace Cassini
             // a1Panel1
             // 
             this.a1Panel1.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.a1Panel1.Controls.Add(this.label6);
             this.a1Panel1.Controls.Add(this.txtVirRoot);
             this.a1Panel1.Controls.Add(this.label5);
             this.a1Panel1.Controls.Add(this.label4);
@@ -197,6 +203,7 @@ namespace Cassini
             this.btnLogs.Text = "Logs";
             this.btnLogs.UseCompatibleTextRendering = true;
             this.btnLogs.UseVisualStyleBackColor = true;
+            this.btnLogs.Visible = false;
             this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
             // btnSettings
@@ -208,6 +215,7 @@ namespace Cassini
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseCompatibleTextRendering = true;
             this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Visible = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // grid
@@ -229,7 +237,7 @@ namespace Cassini
             this.grid.Name = "grid";
             this.grid.RowTemplate.Height = 24;
             this.grid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.grid.Size = new System.Drawing.Size(957, 344);
+            this.grid.Size = new System.Drawing.Size(957, 338);
             this.grid.TabIndex = 100;
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             // 
@@ -378,6 +386,17 @@ namespace Cassini
             this.btnStartServer.UseVisualStyleBackColor = false;
             this.btnStartServer.Click += new System.EventHandler(this.btnStartServer_Click);
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(21, 625);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(957, 17);
+            this.label6.TabIndex = 107;
+            this.label6.Text = "Copyright © Tanzim Saqib and Microsoft Corporation. All rights reserved.";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.UseCompatibleTextRendering = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -390,7 +409,7 @@ namespace Cassini
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cassini 4.0";
+            this.Text = "Cassini 4.0 - http://cassini.googlecode.com";
             this.Load += new System.EventHandler(this.Main_Load);
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.contextMenuNotify.ResumeLayout(false);
@@ -432,6 +451,7 @@ namespace Cassini
         private System.Windows.Forms.DataGridViewTextBoxColumn PhysicalPath;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewButtonColumn btnOptions;
+        private System.Windows.Forms.Label label6;
 
     }
 }
